@@ -3,6 +3,10 @@
 		<view style="padding:0rpx 10rpx;">
 			<u-swiper :list="list" :height="350"></u-swiper>
 		</view>
+		
+		<view style="padding:0rpx 10rpx;">
+			{{currentUser.userId}},欢迎您！
+		</view>
 	</view>
 </template>
 
@@ -10,6 +14,11 @@
 	export default {
 		data() {
 			return {
+				
+				currentUser:{
+					userId:'',
+					userName:''
+				},
 				
 				mealList:[],//餐品清单
 				
@@ -34,10 +43,21 @@
 			}
 		},
 		//这是一个声明周期方法，表示页面正在加载，还未显示之前，执行的逻辑
+		//onLoad表示页面加载完成，仅在页面被创建时执行，回退到本页时不会执行
 		onLoad() {
 			this.getMealList();
 		},
+		//这是一个声明周期方法,每次页面显示时执行
+		onShow(){
+			this.getCurrentUser();
+			
+		},
 		methods: {
+			
+			async getCurrentUser(){
+				this.currentUser = await this.$u.get('/user/curr-user');
+			},
+			
 			//获得餐品清单
 			//将方法声明为异步的，则内部异步请求可以实现同步化
 			async getMealList(){

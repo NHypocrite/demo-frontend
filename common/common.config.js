@@ -1,4 +1,4 @@
-export const apiBaseUrl = 'http://localhost:18888';
+export const apiBaseUrl = 'http://localhost:9999';
 uni.$u.apiBaseUrl = apiBaseUrl;
 
 const install = (app, options) => {

@@ -38,7 +38,12 @@
 		methods: {
 			async login(){
 				console.log(this.loginUser);
-				await this.$u.post('/user/login',this.loginUser)
+				const token = await this.$u.post('/user/login',this.loginUser);
+				//到此处，一定成功，即success为true，code为200
+				console.log("token===>",token);
+				//令牌存储于本地(以“Token”为键)
+				uni.setStorageSync("Token",token);
+				
 				uni.setStorageSync("isLogin",true);//在客户端存储信息，结构是键值对
 				this.$u.toast('登录成功');
 				this.$u.route({
