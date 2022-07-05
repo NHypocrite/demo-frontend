@@ -47,7 +47,8 @@ const install = (app, options) => {
 			return res.data;
 		} else if (res.code == 520) {
 			// 假设520为Token失效，这里跳转登录
-			$u_.toast('未登录');
+			//console.log("res===>",res);
+			$u_.toast(res.message);
 			// setTimeout(() => {
 			// 	// 此为uView的方法，详见路由相关文档
 			// 	$u_.route('/pages/login/login')

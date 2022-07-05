@@ -44,7 +44,7 @@
 				//令牌存储于本地(以“Token”为键)
 				uni.setStorageSync("Token",token);
 				
-				uni.setStorageSync("isLogin",true);//在客户端存储信息，结构是键值对
+				//uni.setStorageSync("isLogin",true);//在客户端存储信息，结构是键值对
 				this.$u.toast('登录成功');
 				this.$u.route({
 								url: 'pages/index/index',
