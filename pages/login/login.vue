@@ -1,7 +1,8 @@
 <template>
 	<view class="login">
 		<view style="width:95%;display: flex; flex-direction;justify-content:flex-end;margin-top:20rpx;">
-			<view><u-button :plain="true" size="mini" style="width:200rpx;" :ripple="true" type="error">新用户注册</u-button></view>
+			<view><u-button :plain="true" size="mini" style="width:200rpx;" @click="$u.route('/pages/register/register')"
+				:ripple="true" type="error">新用户注册</u-button></view>
 		</view>
 		<view style="width:300rpx;margin-top:15%;margin-bottom:50rpx;">
 			<u-image width="100%" height="300rpx" src="/static/login/login.svg"></u-image>
