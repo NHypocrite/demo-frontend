@@ -60,6 +60,15 @@
             }
             
         }
+        ,{
+            "path" : "pages/cls/cls",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": true
+            }
+            
+        }
     ],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",
