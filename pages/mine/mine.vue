@@ -4,6 +4,13 @@
 			<u-cell-item v-if="!isLogin" @click="toLogin" index="login" title="登录" :arrow="true" arrow-direction="right"></u-cell-item>
 			<u-cell-item v-if="isLogin" @click="exit" index="login" title="退出" :arrow="true" arrow-direction="right"></u-cell-item>
 		</u-cell-group>
+		
+		<view>
+			
+			{{$store.num}}
+			
+			
+		</view>
 	</view>
 </template>
 

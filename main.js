@@ -24,12 +24,16 @@ import {
 
 import * as Pinia from 'pinia'; //导入pinia
 
+import storeInstaller from '@/common/store'
+
 export function createApp() {
 	const app = createSSRApp(App)
 	// 使用 uView UI
 	app.use(uView).use(commonConfig).use(httpInterceptor);
 	
 	app.use(Pinia.createPinia());//安装pinia
+	
+	app.use(storeInstaller);
 	
 	return {
 		app,
