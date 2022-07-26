@@ -12,19 +12,28 @@ import Vue from 'vue'
 Vue.config.productionTip = false
 App.mpType = 'app'
 const app = new Vue({
-    ...App
+	...App
 })
 app.$mount()
 // #endif
 
 // #ifdef VUE3
-import { createSSRApp } from 'vue'
+import {
+	createSSRApp
+} from 'vue'
+
+import * as Pinia from 'pinia'; //导入pinia
+
 export function createApp() {
-  const app = createSSRApp(App)
-  // 使用 uView UI
+	const app = createSSRApp(App)
+	// 使用 uView UI
 	app.use(uView).use(commonConfig).use(httpInterceptor);
-  return {
-    app
-  }
+	
+	app.use(Pinia.createPinia());//安装pinia
+	
+	return {
+		app,
+		Pinia, // 此处必须将 Pinia 返回
+	}
 }
 // #endif
