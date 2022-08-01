@@ -45,11 +45,13 @@
 		//这是一个声明周期方法，表示页面正在加载，还未显示之前，执行的逻辑
 		//onLoad表示页面加载完成，仅在页面被创建时执行，回退到本页时不会执行
 		onLoad() {
-			this.getMealList();
+			//this.getMealList();
 		},
+		
 		//这是一个声明周期方法,每次页面显示时执行
-		onShow(){
+		onShow(){			
 			this.getCurrentUser();
+			this.getMealList();
 			
 		},
 		methods: {
